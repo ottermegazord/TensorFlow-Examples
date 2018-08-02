@@ -84,3 +84,15 @@ for i in range(25):
                                   color=color)
 
 plt.show()
+
+#predict individual image
+
+img = test_images[0]
+
+#add to list since prediction function only accepts list
+img = np.expand_dims(img, 0)
+
+predictions = model.predict(img)
+
+print(class_names[np.argmax(predictions[0])])
+
